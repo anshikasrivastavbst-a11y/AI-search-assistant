@@ -1,222 +1,82 @@
-# 🧠 AI Search & Research Assistant (Ongoing Project)
+# 🧠 AI Search & Research Assistant
 
-An AI-powered web application that helps users collect, analyze, and summarize information from the web into structured research reports. The application combines web search, generative AI, and automated PDF generation to improve research efficiency and productivity.
+An AI-powered research application that searches the web, processes information using Generative AI, and generates structured research reports with PDF export functionality.
 
-This project is currently under active development.
+## 🌐 Live Demo
 
----
+**Live Application:** [AI Search & Research Assistant](https://ai-search-assistant-wfh6kvc5wuvdvocpcqqw9p.streamlit.app/)
 
-##  Features
+**GitHub Repository:** [AI Search & Research Assistant](https://github.com/anshikasrivastavbst-a11y/ai-search-assistant)
 
-- 🔍 **Web Search Integration:** Retrieves relevant web search results using the Tavily API.
-- 🤖 **AI-Based Research:** Uses Google's Gemini API to generate structured research reports from search results.
-- 📝 **Automated Report Generation:** Organizes research findings into an executive summary, key findings, insights, advantages and disadvantages, and a conclusion.
-- 📄 **PDF Report Generation:** Generates downloadable PDF reports using ReportLab.
-- 🖼️ **Related Image Search:** Retrieves related image results through the Tavily API.
-- 🧩 **Modular Agent-Based Architecture:**
-  - Search Agent
-  - Research Agent
-  - Report Agent
-  - Image Agent
-- 📊 **Research Statistics:** Displays source count, report word count, and generation time.
-- 📚 **Session-Based Research History:** Tracks searched topics during the current Streamlit session.
-- ⚙️ **Report Length Options:** Allows users to select Short, Medium, or Detailed reports.
+## ✨ Features (Implemented)
 
----
+- 🔍 **Web Search Integration** – Retrieves relevant web information using the Tavily API.
+- 🤖 **AI-Powered Research** – Uses Google's Gemini API to process information and generate research reports.
+- 📝 **Research Report Generation** – Organizes research findings into a structured format.
+- 📄 **PDF Report Generation** – Generates PDF reports using ReportLab.
+- 🖼️ **Image Search** – Supports searching for images related to research topics.
+- 🖥️ **Interactive Interface** – Provides a user-friendly interface built with Streamlit.
+- 🧩 **Modular Architecture** – Organizes application functionality into separate modules.
+- ☁️ **Cloud Deployment** – Deployed on Streamlit Community Cloud.
 
 ## 🛠️ Tech Stack
 
 | Technology | Purpose |
 |---|---|
-| Python | Core application logic |
-| Streamlit | Interactive web application interface |
-| Google Gemini API | AI-based research and report generation |
-| Tavily API | Web search and image search integration |
-| Requests | HTTP requests and API communication |
-| python-dotenv | Loading environment variables for local development |
+| Python | Core programming language |
+| Streamlit | Web application interface |
+| Google Gemini API | AI-powered research and text generation |
+| Tavily API | Web search and information retrieval |
+| Requests | HTTP requests |
+| python-dotenv | Environment variable management |
 | ReportLab | PDF report generation |
+| Git & GitHub | Version control and source code hosting |
+| Streamlit Community Cloud | Application deployment |
 
----
-
-## 🏗️ Application Workflow
-
-1. **User Input:** The user enters a research topic in the Streamlit interface.
-2. **Web Search:** The Search Agent retrieves relevant results using Tavily.
-3. **Content Preparation:** The Report Agent combines search result titles, content, and source URLs.
-4. **AI Research:** The Research Agent sends the topic and collected content to Gemini to generate a structured report.
-5. **Image Search:** The Image Agent requests related image results from Tavily.
-6. **Report Display:** The application displays the report, source count, word count, and generation time.
-7. **PDF Export:** The PDF utility creates a downloadable research report.
-8. **Source References:** The application displays links to the retrieved web sources.
-
----
-
-## 📁 Project Structure
+## 📂 Project Structure
 
 ```text
-ai-search-assistant/
-│
-├── app.py
-├── requirements.txt
-├── README.md
-├── .gitignore
-├── research_report.pdf
+AI-search-assistant/
 │
 ├── agents/
-│   ├── search_agent.py
-│   ├── research_agent.py
-│   ├── report_agent.py
-│   └── image_agent.py
-│
-└── utils/
-    └── pdf_utils.py
+├── utils/
+├── app.py
+├── requirements.txt
+├── .gitignore
+├── research_report.pdf
+└── README.md
 ```
 
-- `app.py` — Main Streamlit application and research workflow.
-- `requirements.txt` — Lists the Python dependencies.
-- `agents/search_agent.py` — Retrieves web search results using Tavily.
-- `agents/research_agent.py` — Generates research reports using Gemini.
-- `agents/report_agent.py` — Prepares content from search results.
-- `agents/image_agent.py` — Retrieves related image results using Tavily.
-- `utils/pdf_utils.py` — Creates PDF reports using ReportLab.
-- `research_report.pdf` — A PDF report file included in the repository.
-- `.gitignore` — Specifies files and folders Git should ignore.
+## 📌 Project Status
 
-Local files such as `.env` and the virtual environment should not be committed to the repository.
+**Status: Completed**
 
----
+The application has been developed and deployed on Streamlit Community Cloud. It integrates web search, AI-powered research, report generation, and PDF export functionality.
 
-## ⚙️ Installation and Setup
-
-### Prerequisites
-
-- Python installed on your system
-- A Tavily API key
-- A Google Gemini API key
-
-### 1. Clone the Repository
-
-```bash
-git clone https://github.com/anshikasrivastavbst-a11y/ai-search-assistant.git
-cd ai-search-assistant
-```
-
-### 2. Create a Virtual Environment
-
-```bash
-python -m venv venv
-```
-
-Activate the environment on Windows:
-
-```bash
-venv\Scripts\activate
-```
-
-### 3. Install Dependencies
-
-```bash
-pip install -r requirements.txt
-```
-
-### 4. Configure Environment Variables
-
-Create a `.env` file in the project root for local development:
-
-```env
-TAVILY_API_KEY=your_tavily_api_key
-GEMINI_API_KEY=your_gemini_api_key
-```
-
-Replace the placeholder values with your own API keys. Never publish real credentials in source code or GitHub commits.
-
-### 5. Run the Application
-
-```bash
-streamlit run app.py
-```
-
-Open the local URL displayed in the terminal to access the application.
-
----
-
-## ☁️ Deployment
-
-The application is deployed on **Streamlit Community Cloud**.
-
-**Live Demo:** [AI Search & Research Assistant](https://ai-search-assistant-wfh6kvc5wuvdvocpcqqw9p.streamlit.app/)
-
-The deployed application uses API credentials configured through Streamlit Community Cloud Secrets.
-
-To deploy your own copy:
-
-1. Push the project to a GitHub repository.
-2. Connect the repository to Streamlit Community Cloud.
-3. Select `app.py` as the application entry point.
-4. Configure the required API credentials in the app's Secrets settings.
-5. Deploy the application and review the logs if errors occur.
-
-Successful deployment does not guarantee continuous availability of third-party APIs or their usage quotas.
-
----
-
-## 🚧 Current Project Status
-
-- ✔ Streamlit application implemented.
-- ✔ Tavily web search integration implemented.
-- ✔ Modular agent-based architecture implemented.
-- ✔ Gemini-based research report generation integrated.
-- ✔ PDF report generation functionality implemented.
-- ✔ Related image search integration implemented.
-- ✔ Application deployed on Streamlit Community Cloud.
-- 🔄 UI improvements and additional features remain ongoing.
-
-**API limitation:** Gemini report generation has encountered a free-tier quota error during deployment testing. The feature may be temporarily unavailable until quota becomes available.
-
----
+**Note:** AI report generation depends on Gemini API availability and usage quotas. Free-tier quota limits may temporarily affect report generation.
 
 ## 🔐 Security Note
 
-- API keys are loaded through environment variables during local development.
-- Streamlit Community Cloud Secrets are used to configure deployment credentials.
-- `.env` and local virtual environment folders should be excluded through `.gitignore`.
-- Never commit API keys or other credentials to GitHub.
-- If an API key is exposed, revoke it and generate a replacement.
+- Store API keys in environment variables or Streamlit Community Cloud secrets.
+- Never commit API keys or other sensitive credentials to GitHub.
+- Keep the `.env` file excluded from version control.
 
----
+## 🚀 Future Improvements
 
-## 📌 Future Improvements
+The current project is marked as completed. The following are optional enhancements for a future version:
 
-- Improve the Streamlit interface and user experience.
-- Optimize AI response time and API usage.
-- Add multi-document research and summarization.
-- Support additional report export formats.
-- Improve error handling for API failures and quota limits.
-- Enhance source attribution and research traceability.
-- Add automated testing and performance improvements.
-
----
-
-## 🎯 Learning Outcomes
-
-This project provides practical experience with:
-
-- Integrating external APIs into a Python application.
-- Building an interactive web application using Streamlit.
-- Designing modular agent-based components.
-- Using generative AI for research and summarization.
-- Generating downloadable PDF reports.
-- Managing API credentials and cloud deployment.
-- Handling third-party API errors and usage limitations.
-
----
+- Improved API error handling and retry mechanisms.
+- Additional report formats and customization options.
+- Enhanced research source citations.
+- Support for additional AI model providers.
 
 ## 👩‍💻 Author
 
 **Anshika Srivastav**
 
-GitHub: [anshikasrivastavbst-a11y](https://github.com/anshikasrivastavbst-a11y)
+- GitHub: [anshikasrivastavbst-a11y](https://github.com/anshikasrivastavbst-a11y)
+- Project: [AI Search & Research Assistant](https://github.com/anshikasrivastavbst-a11y/ai-search-assistant)
 
 ---
 
-*This project is under active development. Feature availability depends on successful API responses and service quotas.*
+⭐ Thank you for visiting this project!
